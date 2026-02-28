@@ -1,0 +1,304 @@
+/* ============================================================
+   1. RESET & DASAR
+   ============================================================ */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+
+body { 
+    background: #ffffff; /* Latar belakang putih sesuai request untuk konsistensi */
+    color: #2d3e50; 
+    line-height: 1.6;
+}
+
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* ============================================================
+   2. HEADER & NAV (Konsisten dengan halaman lain)
+   ============================================================ */
+header { 
+    background: white; 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    border-bottom: 1px solid #f0f4f8; /* Border tipis di bawah header */
+}
+
+nav { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    position: relative;
+    min-height: 45px;
+}
+
+.logo { 
+    max-height: 35px; 
+    width: auto; 
+}
+
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Posisi menu tepat di tengah */
+}
+
+.nav-menu a { 
+    text-decoration: none; 
+    color: #4a5568; 
+    font-size: 14px; 
+    font-weight: 700; 
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { 
+    color: #1a237e; /* Warna Navy konsisten saat hover */
+}
+
+/* ============================================================
+   3. DOMAIN HERO (Versi Terang)
+   ============================================================ */
+.domain-hero-v2 {
+    text-align: center;
+    padding: 80px 0;
+    background: #f8fafc; /* Latar abu-abu sangat muda untuk pemisah bagian */
+}
+
+.badge-new {
+    background: #fff5ed; /* Warna oranye muda transparan */
+    color: #ff6600; /* Warna oranye konsisten untuk aksen promo */
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.domain-hero-v2 h1 { 
+    font-size: 42px; 
+    font-weight: 800; 
+    color: #1a237e; /* Warna Navy konsisten untuk judul */
+    margin-bottom: 15px; 
+}
+
+.domain-hero-v2 p { 
+    color: #64748b; 
+    max-width: 600px; 
+    margin: 0 auto 40px; 
+}
+
+/* ============================================================
+   4. SEARCH BOX (Bersih dengan Shadow)
+   ============================================================ */
+.search-glass {
+    background: white;
+    border: 2px solid #e2e8f0;
+    padding: 8px;
+    border-radius: 15px;
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Shadow halus untuk efek kedalaman */
+}
+
+.search-glass input {
+    flex: 1;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-glass button {
+    background: #ff6600; /* Warna oranye konsisten untuk tombol aksi */
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-glass button:hover { 
+    background: #1a237e; /* Berubah jadi Navy saat hover */
+}
+
+/* ============================================================
+   5. PRICE GRID (Kartu Putih Bersih)
+   ============================================================ */
+.price-grid-glass { 
+    padding: 60px 0; 
+    background: white;
+}
+
+.price-grid-glass .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.glass-card-price {
+    background: white;
+    border: 1.5px solid #f0f4f8;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.glass-card-price:hover { 
+    border-color: #1a237e; /* Border Navy saat hover */
+    box-shadow: 0 15px 30px rgba(26, 35, 126, 0.08); /* Shadow Navy halus saat hover */
+    transform: translateY(-5px); /* Sedikit terangkat saat hover */
+}
+
+.glass-card-price.highlighted {
+    border: 2px solid #ff6600; /* Border oranye untuk menonjolkan paket populer */
+    background: #fffaf7; /* Warna latar oranye sangat muda */
+}
+
+.glass-card-price span { 
+    color: #1a237e; 
+    font-weight: 800; 
+    font-size: 18px; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+.glass-card-price h3 { 
+    font-size: 24px; 
+    color: #2d3e50; 
+    margin-bottom: 5px; 
+}
+
+.glass-card-price p { 
+    font-size: 13px; 
+    color: #64748b; 
+}
+
+/* ============================================================
+   6. FAQ & FOOTER
+   ============================================================ */
+.faq-section { 
+    background: #f8fafc; /* Latar abu-abu sangat muda */
+    padding: 80px 0; 
+}
+
+.faq-item { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    border: 1px solid #e2e8f0; 
+}
+
+.faq-item h4 { 
+    color: #1a237e; 
+    margin-bottom: 10px; 
+}
+
+.faq-item p { 
+    color: #64748b; 
+    font-size: 14px; 
+}
+
+footer {
+    background: #1a237e; /* Warna Navy konsisten untuk footer */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* ============================================================
+   7. MEDIA QUERIES (Responsif)
+   ============================================================ */
+@media (max-width: 768px) {
+    .nav-menu { 
+        display: none; /* Sembunyikan menu di perangkat seluler */
+    }
+}
+
+/* --- Domain Page Specific Styling --- */
+.domain-hero {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.domain-pricing-mini {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.mini-item {
+    background: #f1f5f9;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Badge di bawah Search Bar */
+.search-trust-badges {
+    margin-top: 35px;
+    opacity: 0.8;
+}
+
+.search-trust-badges span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #64748b;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.badge-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.badge-logos img {
+    height: 18px;
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+
+.badge-logos img:hover {
+    filter: grayscale(0);
+}
+
+/* Footer Payment */
+.footer-payment {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+}
+
+.payment-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.payment-logos img {
+    height: 22px;
+    filter: brightness(0.5); /* Gelap di footer */
+    opacity: 0.6;
+}

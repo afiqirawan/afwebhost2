@@ -1,0 +1,157 @@
+/* --- NAVIGATION FIXED --- */
+header { 
+    background: white; 
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: relative; /* Penting buat centering */
+}
+
+nav { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; /* Menjaga logo di kiri */
+    position: relative;
+    min-height: 40px;
+}
+
+.logo { 
+    max-height: 35px; 
+    width: auto; 
+    z-index: 10; /* Supaya gak ketutup menu */
+}
+
+/* Bagian ini yang bikin menu ke tengah */
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Geser tepat ke tengah-tengah nav */
+}
+
+.nav-menu a { 
+    text-decoration: none; 
+    color: #4a5568; 
+    font-size: 14px; 
+    font-weight: 600; 
+    transition: 0.2s; 
+}
+
+.nav-menu a:hover { 
+    color: #1a237e; 
+}
+
+/* Space kosong buat penyeimbang flexbox di nav */
+.nav-placeholder {
+    width: 100px; /* Ukuran kira-kira sama kayak logo biar balance */
+}
+
+/* --- LOGIN PAGE STYLES (MATCHING MAIN DESIGN) --- */
+
+/* Memastikan main konten login ada di tengah layar */
+.login-page {
+    background: #f4f7fe; /* Warna abu-abu sangat muda biar card putihnya "pop out" */
+    min-height: calc(100vh - 150px); /* Mengurangi tinggi header & footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-box {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); /* Shadow halus */
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #1a237e; /* Navy Hero Section */
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Styling Form */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d3e50;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4c40af; /* Warna ungu brand lo */
+    box-shadow: 0 0 0 3px rgba(76, 64, 175, 0.1);
+}
+
+/* Tombol Submit Login */
+.btn-submit {
+    width: 100%;
+    background: #2d3e50; /* Navy sesuai Button Register di Home */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #1a237e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.footer-text {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #718096;
+}
+
+.footer-text a {
+    color: #4c40af;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Penyesuaian Footer agar tetap di bawah */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #2d3e50;
+    color: white;
+}
