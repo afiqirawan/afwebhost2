@@ -3,12 +3,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: #f4f7fe;
-    min-height: 100vh;
+    /* Ganti Arial ke Plus Jakarta Sans */
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    overflow-x: hidden;
+    
+    /* BIAR SMOOTH & GAK KAYAK ROBOT: */
+    line-height: 1.7; /* Kasih napas antar baris biar gak sesek */
+    color: #334155;   /* Abu-abu gelap premium, bukan hitam pekat */
+    -webkit-font-smoothing: antialiased; /* Rahasia font halus di Mac/iPhone */
+    -moz-osx-font-smoothing: grayscale; /* Rahasia font halus di Firefox */
+    text-rendering: optimizeLegibility;
+}
+
+/* Judul dibikin agak 'rapi' jarak hurufnya */
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em; 
+    font-weight: 800;
+    color: #1a237e; /* Biru gelap biar tegas */
 }
 
 /* --- 2. NAVIGASI (TENGAH PRESISI) --- */
@@ -125,31 +139,35 @@ nav {
     font-weight: bold;
     color: #1a237e;
     margin-bottom: 8px;
+    text-align: left; /* Biar label gak lari ke tengah */
 }
 
 select {
     width: 100%;
-    padding: 11px;
+    height: 45px; /* Ini kuncinya biar gak gepeng */
+    padding: 0 15px;
     border: 2px solid #ddd;
     border-radius: 8px;
     outline: none;
     background: white;
-}
-
-.gender-options {
-    display: flex;
-    gap: 20px;
-    padding-top: 8px;
-}
-
-.radio-label {
     font-size: 14px;
-    cursor: pointer;
+    color: #333;
+    -webkit-appearance: none; /* Bersihin gaya bawaan HP */
+    appearance: none;
+    /* Tambahin panah dropdown manual */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
 }
 
 .date-row {
     display: flex;
     gap: 10px;
+}
+
+.date-row select {
+    flex: 1; /* Day, Month, Year bagi rata layar */
+    min-width: 0; 
 }
 
 /* --- 7. TOMBOL & FOOTER --- */
@@ -175,14 +193,21 @@ select {
 .footer-text { margin-top: 20px; font-size: 14px; }
 .footer-text a { color: #1a237e; text-decoration: none; font-weight: bold; }
 
-/* --- 8. HP RESPONSIVE (PENTING) --- */
+/* --- 8. HP RESPONSIVE --- */
 @media (max-width: 768px) {
     .nav-menu { display: none; }
     
     .input-row {
-        flex-direction: column; /* Jadi tumpuk di HP */
-        gap: 20px;
+        flex-direction: column; /* Input jadi tumpuk atas-bawah */
+        gap: 15px; 
     }
     
-    .register-box { padding: 25px 15px; }
+    .register-box { 
+        padding: 25px 15px; 
+        margin: 10px; 
+    }
+
+    .date-row {
+        gap: 5px; /* Kecilin jarak Day/Month/Year biar gak luber ke samping */
+    }
 }

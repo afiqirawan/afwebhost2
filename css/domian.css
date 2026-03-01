@@ -1,32 +1,40 @@
-/* ============================================================
-   1. RESET & DASAR
-   ============================================================ */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* --- 1. RESET & DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Ganti Arial ke Plus Jakarta Sans */
     font-family: 'Plus Jakarta Sans', sans-serif; 
+    overflow-x: hidden;
+    
+    /* BIAR SMOOTH & GAK KAYAK ROBOT: */
+    line-height: 1.7; /* Kasih napas antar baris biar gak sesek */
+    color: #334155;   /* Abu-abu gelap premium, bukan hitam pekat */
+    -webkit-font-smoothing: antialiased; /* Rahasia font halus di Mac/iPhone */
+    -moz-osx-font-smoothing: grayscale; /* Rahasia font halus di Firefox */
+    text-rendering: optimizeLegibility;
 }
 
-body { 
-    background: #ffffff; /* Latar belakang putih sesuai request untuk konsistensi */
-    color: #2d3e50; 
-    line-height: 1.6;
+/* Judul dibikin agak 'rapi' jarak hurufnya */
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em; 
+    font-weight: 800;
+    color: #1a237e; /* Biru gelap biar tegas */
 }
 
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-/* ============================================================
-   2. HEADER & NAV (Konsisten dengan halaman lain)
-   ============================================================ */
+/* --- 2. HEADER & NAV (VERSI ANTI-GAIB) --- */
 header {
-    background: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #ffffff !important; /* Paksa warna putih */
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative; /* Ganti sticky ke relative dulu buat ngetes */
+    width: 100%;
+    z-index: 9999; /* Pastikan paling depan */
+    display: block; /* Pastikan dia bukan elemen kosong */
+    min-height: 60px; /* Kasih tinggi minimal biar kelihatan */
 }
 
 .container {
@@ -36,27 +44,62 @@ header {
 }
 
 nav {
-    display: flex;
+    display: flex !important; /* Paksa muncul */
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-area {
+    display: flex;
     align-items: center;
 }
 
-.logo-area, .nav-buttons { flex: 1; }
-.logo-area { display: flex; justify-content: flex-start; }
-.logo { height: 40px; }
+.logo {
+    height: 40px; 
+    width: auto;
+    display: block !important;
+}
 
 .nav-menu {
-    flex: 2;
-    display: flex;
-    justify-content: center;
+    display: flex !important;
     list-style: none;
-    gap: 25px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
+    color:#003399; /* Gue ganti ke Biru biar kontras banget sama putih */
+    font-family:'Montserrat';
+    font-weight: 600; /* Super tebal biar kelihatan */
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Bikin huruf gede semua biar makin jelas */
+}
+
+/* --- RESPONSIVE HP --- */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    .logo {
+        height: 30px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
 }
 
 /* ============================================================
