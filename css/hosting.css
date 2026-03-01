@@ -1,24 +1,95 @@
-/* --- Dasar & Konsistensi --- */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-body { background: #ffffff; color: #2d3e50; }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+/* =========================================
+   1. DASAR & KONSISTENSI
+   ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+}
 
-/* --- Header & Nav (Persis Halaman Domain) --- */
-header { background: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #f0f4f8; }
-nav { display: flex; align-items: center; justify-content: flex-start; position: relative; min-height: 45px; }
-.logo { max-height: 35px; }
-.nav-menu { display: flex; list-style: none; gap: 20px; position: absolute; left: 50%; transform: translateX(-50%); }
-.nav-menu a { text-decoration: none; color: #4a5568; font-size: 14px; font-weight: 700; transition: 0.3s; }
-.nav-menu a:hover { color: #1a237e; }
+body { 
+    background: #ffffff; 
+    color: #2d3e50; 
+    overflow-x: hidden;
+}
 
-/* --- Hero --- */
-.hosting-hero { text-align: center; padding: 60px 0; background: #f8fafc; }
-.hosting-hero h1 { font-size: 40px; color: #1a237e; margin-bottom: 10px; }
-.text-navy { color: #ff6600; } /* Gue kasih aksen oranye biar eyecatching */
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
 
-/* --- Pricing Grid --- */
-.hosting-packages { padding: 60px 0; }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+/* =========================================
+   2. HEADER & NAV (PRESISI TENGAH)
+   ========================================= */
+header {
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area, .nav-buttons { flex: 1; }
+.logo-area { display: flex; justify-content: flex-start; }
+.logo { height: 40px; }
+
+.nav-menu {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hosting-hero { 
+    text-align: center; 
+    padding: 60px 0; 
+    background: #f8fafc; 
+}
+
+.hosting-hero h1 { 
+    font-size: 40px; 
+    color: #1a237e; 
+    margin-bottom: 10px; 
+}
+
+.text-navy { 
+    color: #ff6600; 
+}
+
+/* =========================================
+   4. PRICING GRID
+   ========================================= */
+.hosting-packages { 
+    padding: 60px 0; 
+}
+
+.pricing-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
 
 .price-card {
     background: white;
@@ -29,52 +100,136 @@ nav { display: flex; align-items: center; justify-content: flex-start; position:
     transition: 0.3s;
     position: relative;
 }
-.price-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(26,35,126,0.1); border-color: #1a237e; }
 
-.price-card.featured { border: 2px solid #ff6600; background: #fffaf7; }
-.badge { background: #ff6600; color: white; padding: 5px 15px; border-radius: 5px; font-size: 12px; font-weight: bold; position: absolute; top: 20px; right: 20px; }
+.price-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(26,35,126,0.1); 
+    border-color: #1a237e; 
+}
 
-.icon { font-size: 45px; margin-bottom: 20px; }
-.price { font-size: 32px; font-weight: 800; color: #1a237e; margin: 15px 0; }
-.price span { font-size: 16px; color: #64748b; }
+.price-card.featured { 
+    border: 2px solid #ff6600; 
+    background: #fffaf7; 
+}
 
-.price-card ul { list-style: none; text-align: left; margin: 25px 0; }
-.price-card ul li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #4a5568; }
-.price-card ul li::before { content: "✓"; color: #38a169; font-weight: bold; margin-right: 10px; }
+.badge { 
+    background: #ff6600; 
+    color: white; 
+    padding: 5px 15px; 
+    border-radius: 5px; 
+    font-size: 12px; 
+    font-weight: bold; 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+}
+
+.icon { 
+    font-size: 45px; 
+    margin-bottom: 20px; 
+}
+
+.price { 
+    font-size: 32px; 
+    font-weight: 800; 
+    color: #1a237e; 
+    margin: 15px 0; 
+}
+
+.price span { 
+    font-size: 16px; 
+    color: #64748b; 
+}
+
+.price-card ul { 
+    list-style: none; 
+    text-align: left; 
+    margin: 25px 0; 
+}
+
+.price-card ul li { 
+    padding: 10px 0; 
+    border-bottom: 1px solid #f1f5f9; 
+    font-size: 14px; 
+    color: #4a5568; 
+}
+
+.price-card ul li::before { 
+    content: "✓"; 
+    color: #38a169; 
+    font-weight: bold; 
+    margin-right: 10px; 
+}
 
 .btn-buy {
-    display: block; background: #1a237e; color: white; text-decoration: none;
-    padding: 15px; border-radius: 10px; font-weight: 700; transition: 0.3s;
-}
-.btn-buy:hover { background: #ff6600; }
-
-/* --- Trust Bar --- */
-.trust-bar { background: #1a237e; padding: 30px 0; color: white; }
-.trust-bar .container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; opacity: 0.7; font-weight: 800; }
-
-/* --- FAQ --- */
-.faq-section { background: #f8fafc; padding: 80px 0; }
-.faq-section h2 { text-align: center; color: #1a237e; margin-bottom: 40px; }
-.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-.faq-item { background: white; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; }
-.faq-item h4 { color: #1a237e; margin-bottom: 10px; }
-
-/* --- Footer & Floating WA --- */
-footer { background: white; padding: 40px 0; text-align: center; border-top: 1px solid #f0f4f8; color: #64748b; }
-.floating-chat {
-    position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
-    padding: 12px 20px; border-radius: 50px; text-decoration: none; display: flex;
-    align-items: center; gap: 10px; font-weight: 600; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000;
+    display: block; 
+    background: #1a237e; 
+    color: white; 
+    text-decoration: none;
+    padding: 15px; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    transition: 0.3s;
 }
 
-/* --- Hosting CTA Styling --- */
-.hosting-cta {
-    padding: 60px 0;
-    background: #ffffff; /* Tetap putih bersih */
+.btn-buy:hover { 
+    background: #ff6600; 
 }
+
+/* =========================================
+   5. TRUST & FAQ
+   ========================================= */
+.trust-bar { 
+    background: #1a237e; 
+    padding: 30px 0; 
+    color: white; 
+}
+
+.trust-bar .container { 
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    opacity: 0.7; 
+    font-weight: 800; 
+}
+
+.faq-section { 
+    background: #f8fafc; 
+    padding: 80px 0; 
+}
+
+.faq-section h2 { 
+    text-align: center; 
+    color: #1a237e; 
+    margin-bottom: 40px; 
+}
+
+.faq-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+}
+
+.faq-item { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    border: 1px solid #e2e8f0; 
+}
+
+.faq-item h4 { 
+    color: #1a237e; 
+    margin-bottom: 10px; 
+}
+
+/* =========================================
+   6. CALL TO ACTION (CTA)
+   ========================================= */
+.hosting-cta { padding: 60px 0; background: #ffffff; }
 
 .cta-box {
-    background: linear-gradient(135deg, #1a237e 0%, #3a308f 100%); /* Navy Gradient */
+    background: linear-gradient(135deg, #1a237e 0%, #3a308f 100%);
     padding: 50px;
     border-radius: 30px;
     text-align: center;
@@ -82,144 +237,76 @@ footer { background: white; padding: 40px 0; text-align: center; border-top: 1px
     box-shadow: 0 20px 40px rgba(26, 35, 126, 0.2);
 }
 
-.cta-box h2 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 15px;
+.cta-box h2 { font-size: 32px; font-weight: 800; margin-bottom: 15px; }
+
+.cta-box p { 
+    font-size: 18px; 
+    opacity: 0.9; 
+    margin-bottom: 30px; 
+    max-width: 600px; 
+    margin: 0 auto 30px auto;
 }
 
-.cta-box p {
-    font-size: 18px;
-    opacity: 0.9;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+.cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
 .btn-cta-main {
-    background: #ff6600; /* Oranye biar kontras sama Navy */
-    color: white;
-    padding: 15px 35px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 800;
-    transition: 0.3s;
+    background: #ff6600; 
+    color: white; padding: 15px 35px; border-radius: 12px;
+    text-decoration: none; font-weight: 800; transition: 0.3s;
     box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
 }
 
-.btn-cta-main:hover {
-    transform: translateY(-3px);
-    background: #e65c00;
-}
+.btn-cta-main:hover { transform: translateY(-3px); background: #e65c00; }
 
 .btn-cta-secondary {
-    background: transparent;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: 0.3s;
+    background: transparent; color: white; padding: 15px 35px;
+    border-radius: 12px; text-decoration: none; font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0.3); transition: 0.3s;
 }
-
-.btn-cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
-}
-
-/* Responsif buat HP */
-@media (max-width: 768px) {
-    .cta-box { padding: 30px 20px; }
-    .cta-box h2 { font-size: 24px; }
-    .btn-cta-main, .btn-cta-secondary { width: 100%; }
-}
-
 
 /* =========================================
-   TAMBAHAN FITUR TRUST & PAYMENT (NEW)
+   7. TRUST INDICATORS & FOOTER
    ========================================= */
-
-/* Trust Indicators dibawah Harga */
 .trust-indicators-hosting {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    padding-bottom: 20px;
+    display: flex; justify-content: center; gap: 30px;
+    margin-top: 40px; flex-wrap: wrap; padding-bottom: 20px;
 }
 
 .indicator {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f1f5f9; /* Abu-abu sangat muda biar clean */
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: 0.3s;
+    display: flex; align-items: center; gap: 10px;
+    background: #f1f5f9; padding: 10px 20px; border-radius: 50px; transition: 0.3s;
 }
 
-.indicator:hover {
-    background: #e2e8f0;
-    transform: translateY(-2px);
+.indicator p { font-size: 14px; font-weight: 700; color: #1a237e; margin: 0; }
+
+footer { 
+    background: white; padding: 40px 0; text-align: center; 
+    border-top: 1px solid #f0f4f8; color: #64748b; 
 }
 
-.indicator p { 
-    font-size: 14px; 
-    font-weight: 700; 
-    color: #1a237e; 
-    margin: 0;
-}
-
-/* Payment di Footer */
 .footer-payment {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
+    text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;
 }
 
-.footer-payment p { 
-    font-size: 12px; 
-    color: #64748b; 
-    margin-bottom: 15px; 
-    font-weight: bold; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.payment-logos { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+.payment-logos img { height: 22px; filter: grayscale(1); opacity: 0.5; transition: 0.3s; }
+.payment-logos img:hover { filter: grayscale(0); opacity: 1; }
+
+.floating-chat {
+    position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
+    padding: 12px 20px; border-radius: 50px; text-decoration: none; display: flex;
+    align-items: center; gap: 10px; font-weight: 600; z-index: 1000;
 }
 
-.payment-logos { 
-    display: flex; 
-    justify-content: center; 
-    gap: 25px; 
-    align-items: center; 
-    flex-wrap: wrap;
-}
-
-.payment-logos img { 
-    height: 22px; 
-    filter: grayscale(1); 
-    opacity: 0.5; 
-    transition: 0.3s;
-}
-
-.payment-logos img:hover {
-    filter: grayscale(0);
-    opacity: 1;
-}
-
-/* Responsif HP */
-@media (max-width: 480px) {
+/* =========================================
+   8. MEDIA QUERIES (RESPONSIF)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* Menu tengah sembunyi di HP */
+    .hosting-hero h1 { font-size: 28px; }
+    .cta-box { padding: 30px 20px; }
+    .cta-box h2 { font-size: 24px; }
+    .btn-cta-main, .btn-cta-secondary { width: 100%; text-align: center; }
     .trust-indicators-hosting { gap: 15px; }
     .indicator { width: 100%; justify-content: center; }
 }

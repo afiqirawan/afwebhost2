@@ -1,157 +1,180 @@
-/* --- NAVIGATION FIXED --- */
-header { 
-    background: white; 
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-    position: relative; /* Penting buat centering */
+/* --- 1. RESET & DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-nav { 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; /* Menjaga logo di kiri */
-    position: relative;
-    min-height: 40px;
+body {
+    background: #f4f7fe;
+    min-height: 100vh;
 }
 
-.logo { 
-    max-height: 35px; 
-    width: auto; 
-    z-index: 10; /* Supaya gak ketutup menu */
+/* --- 2. HEADER & NAVIGASI (MENU PRESISI TENGAH) --- */
+header {
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Bagian ini yang bikin menu ke tengah */
-.nav-menu { 
-    display: flex; 
-    list-style: none; 
-    gap: 30px; 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Geser tepat ke tengah-tengah nav */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.nav-menu a { 
-    text-decoration: none; 
-    color: #4a5568; 
-    font-size: 14px; 
-    font-weight: 600; 
-    transition: 0.2s; 
-}
-
-.nav-menu a:hover { 
-    color: #1a237e; 
-}
-
-/* Space kosong buat penyeimbang flexbox di nav */
-.nav-placeholder {
-    width: 100px; /* Ukuran kira-kira sama kayak logo biar balance */
-}
-
-/* --- LOGIN PAGE STYLES (MATCHING MAIN DESIGN) --- */
-
-/* Memastikan main konten login ada di tengah layar */
-.login-page {
-    background: #f4f7fe; /* Warna abu-abu sangat muda biar card putihnya "pop out" */
-    min-height: calc(100vh - 150px); /* Mengurangi tinggi header & footer */
+nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.logo-area {
+    flex: 1; /* Penyeimbang kiri */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-menu {
+    flex: 2; /* Area tengah lebih luas */
+    display: flex;
+    justify-content: center; /* INI KUNCINYA */
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #1a237e;
+}
+
+.nav-buttons {
+    flex: 1; /* Penyeimbang kanan agar menu tengah tidak geser */
+}
+
+/* --- 3. LOGIN LAYOUT --- */
+.login-page {
+    display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: center;
+    padding: 60px 20px;
 }
 
 .login-box {
     background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 400px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05); /* Shadow halus */
     text-align: center;
 }
 
 .login-box h1 {
-    color: #1a237e; /* Navy Hero Section */
-    font-size: 28px;
-    font-weight: 800;
+    color: #1a237e;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #718096;
-    font-size: 14px;
+    color: #666;
     margin-bottom: 30px;
+    font-size: 14px;
 }
 
-/* Styling Form */
+/* --- 4. FLOATING LABEL ANIMATION --- */
 .input-group {
+    position: relative;
+    margin-bottom: 25px;
     text-align: left;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #2d3e50;
-    margin-bottom: 8px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     outline: none;
-    font-size: 14px;
+    font-size: 16px;
+    background: transparent;
     transition: 0.3s;
 }
 
-.input-group input:focus {
-    border-color: #4c40af; /* Warna ungu brand lo */
-    box-shadow: 0 0 0 3px rgba(76, 64, 175, 0.1);
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+    background: white;
+    padding: 0 5px;
 }
 
-/* Tombol Submit Login */
+/* Animasi pas Klik/Isi */
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+    border-color: #1a237e;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+/* --- 5. TOMBOL SIGN IN --- */
 .btn-submit {
     width: 100%;
-    background: #2d3e50; /* Navy sesuai Button Register di Home */
-    color: white;
-    padding: 14px;
+    background: #ffcc00;
+    color: #1a237e;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
 }
 
 .btn-submit:hover {
-    background: #1a237e;
+    background: #ffaa00;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .footer-text {
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 14px;
-    color: #718096;
+    color: #666;
 }
 
 .footer-text a {
-    color: #4c40af;
+    color: #1a237e;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-.footer-text a:hover {
-    text-decoration: underline;
-}
-
-/* Penyesuaian Footer agar tetap di bawah */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #2d3e50;
-    color: white;
+/* --- 6. KHUSUS HP --- */
+@media (max-width: 768px) {
+    .logo { height: 30px; }
+    .nav-menu { display: none; } 
+    .login-box { padding: 30px 20px; }
 }
